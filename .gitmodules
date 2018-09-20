@@ -1,0 +1,3 @@
+[submodule "sigma"]
+	path = sigma
+	url = https://github.com/Neo23x0/sigma
