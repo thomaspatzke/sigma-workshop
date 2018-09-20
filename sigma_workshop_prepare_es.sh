@@ -20,11 +20,19 @@ else
     exit 2
 fi
 
+echo -n "Deleting Kibana index..."
+if curl --fail -s -X DELETE $ES/_bulk > /dev/null
+then
+    echo "Ok"
+else
+    echo "No existing Kibana configuration"
+fi
+
 echo -n "Configuring Kibana..."
 if curl --fail -s -X POST -H "Content-Type: application/json" --data-binary @kibana-config.bulk.json $ES/_bulk > /dev/null
 then
     echo "Ok"
 else
     echo "Failed!"
-    exit 3
+    exit 4
 fi
