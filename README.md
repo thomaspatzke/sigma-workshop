@@ -14,6 +14,13 @@ The logs contain events from [Sysmon 8.0](https://docs.microsoft.com/en-us/sysin
 the [SwiftOnSecurity configuration](https://github.com/SwiftOnSecurity/sysmon-config) in addition to the
 default Windows system, security and application logs.
 
+Further, the [Sigma repository](https://github.com/Neo23x0/sigma) is contained
+as submodule. Clone this repository as follows to get it all:
+
+```
+git clone --recursive https://github.com/thomaspatzke/sigma-workshop.git
+```
+
 ## Installation
 
 First, the Elasticsearch/Kibana stack has to be started with Docker compose:
