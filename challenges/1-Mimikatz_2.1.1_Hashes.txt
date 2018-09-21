@@ -1,0 +1,3 @@
+97f93fe103c5a3618b505e82a1ce2e0e90a481aae102e52814742baddd9fed41  ./Win32/mimilove.exe
+6bfc1ec16f3bd497613f57a278188ff7529e94eb48dcabf81587f7c275b3e86d  ./Win32/mimikatz.exe
+e46ba4bdd4168a399ee5bc2161a8c918095fa30eb20ac88cac6ab1d6dbea2b4a  ./x64/mimikatz.exe

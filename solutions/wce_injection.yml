@@ -1,0 +1,18 @@
+title: WCE Remote Thread Injection
+status: stable
+description: Detection of remote thread creation in LSASS by Windows Credential Editor
+tags:
+    - attack.credential_access
+    - attack.t1003
+      attack.s0005
+logsource:
+    product: windows
+    service: sysmon
+detection:
+    selection:
+        EventID: 8
+        TargetImage: 'C:\Windows\System32\lsass.exe'
+    filter:
+        StartModule: '*'
+    condition: selection and not filter
+level: high

@@ -1,0 +1,7 @@
+/stext
+/stab
+/scomma
+/stabular
+/shtml
+/sverhtml
+/sxml

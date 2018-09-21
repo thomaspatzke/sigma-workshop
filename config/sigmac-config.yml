@@ -1,0 +1,16 @@
+logsources:
+  windows:
+    product: windows
+    index: winlogbeat-*
+  windows-sysmon:
+    product: windows
+    service: sysmon
+    conditions:
+      log_name: 'Microsoft-Windows-Sysmon/Operational'
+defaultindex: winlogbeat-*
+fieldmappings:
+    EventID: event_id
+    CommandLine: event_data.CommandLine
+    Hashes: event_data.Hashes
+    StartModule: event_data.StartModule
+    TargetImage: event_data.TargetImage
