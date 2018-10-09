@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ES=${1:-localhost:9200}
+KIBANA=${2:-localhost:5601}
 
 echo -n "Importing Index template..."
 if curl --fail -s -X PUT -H "Content-Type: application/json" --data-binary @winlogbeat-6.4.0-custom.template.json "$ES/_template/winlogbeat-6.4.0-custom" > /dev/null
@@ -20,19 +21,11 @@ else
     exit 2
 fi
 
-echo -n "Deleting Kibana index..."
-if curl --fail -s -X DELETE $ES/_bulk > /dev/null
-then
-    echo "Ok"
-else
-    echo "No existing Kibana configuration"
-fi
-
-echo -n "Configuring Kibana..."
-if curl --fail -s -X POST -H "Content-Type: application/json" --data-binary @kibana-config.bulk.json $ES/_bulk > /dev/null
+echo -n "Importing Kibana index pattern..."
+if curl --fail -s -X POST -H "kbn-version: 6.4.1" -H "Content-Type: application/json" --data-binary @kibana-index_pattern.json $KIBANA/api/saved_objects/index-pattern/d9085b70-cc00-11e8-979b-49973e02c133 > /dev/null
 then
     echo "Ok"
 else
     echo "Failed!"
-    exit 4
+    exit 3
 fi
