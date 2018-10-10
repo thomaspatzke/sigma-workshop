@@ -9,7 +9,6 @@ then
     echo "Ok"
 else
     echo "Failed!"
-    exit 1
 fi
 
 echo -n "Importing log data into ES..."
@@ -18,7 +17,6 @@ then
     echo "Ok"
 else
     echo "Failed!"
-    exit 2
 fi
 
 echo -n "Importing Kibana index pattern..."
@@ -27,5 +25,4 @@ then
     echo "Ok"
 else
     echo "Failed!"
-    exit 3
 fi
