@@ -1,0 +1,19 @@
+title: Mimikatz detection
+status: stable
+description: Detects Mimikatz 2.1.1 release by recognition of executable hashes
+tags:
+    - attack.s0002
+    - attack.t1003
+    - attack.lateral_movement
+    - attack.credential_access
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection:
+        Hashes:
+            - 97f93fe103c5a3618b505e82a1ce2e0e90a481aae102e52814742baddd9fed41
+            - 6bfc1ec16f3bd497613f57a278188ff7529e94eb48dcabf81587f7c275b3e86d
+            - e46ba4bdd4168a399ee5bc2161a8c918095fa30eb20ac88cac6ab1d6dbea2b4a
+    condition: selection
+level: high
