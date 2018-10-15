@@ -1,3 +1,7 @@
 [submodule "sigma"]
 	path = sigma
 	url = https://github.com/Neo23x0/sigma
+[submodule "sigma_with_generic_logsources"]
+	path = sigma_with_generic_logsources
+	url = https://github.com/Neo23x0/sigma.git
+	branch = project-1
