@@ -1,25 +1,25 @@
-# Slide 12 - Get familar with  Sigma Converter and convert Mimikatz without configuration
+# Get familar with  Sigma Converter and convert Mimikatz without configuration
 
 sigma/tools/sigmac --help
 sigma/tools/sigmac -t es-qs solutions/mimikatz_2.1.1_hashes.yml
 
-# Slide 14 - Conversion of Mimikatz rule with configuration
+# Conversion of Mimikatz rule with configuration
 
 sigma/tools/sigmac -t es-qs -c config/sigmac-config.yml solutions/mimikatz_2.1.1_hashes.yml
 
-# Slide 16 - Netpass rule conversion
+# Netpass rule conversion
 
 sigma/tools/sigmac -t es-qs -c config/sigmac-config.yml solutions/netpass_parameters.ym
 
-# Slide 17 - WCE rule conversion
+# WCE rule conversion
 
 sigma/tools/sigmac -t es-qs -c config/sigmac-config.yml solutions/wce_injection.yml
 
-# Slide 18 - Kibana import file
+# Kibana import file
 
 sigma/tools/sigmac -t kibana -c config/sigmac-config.yml solutions/* -o kibana.json
 
-# Slide 21 - Conversion of Sigma rules with genric log sources
+# Conversion of Sigma rules with genric log sources
 
 sigma_with_generic_logsources/tools/sigmac -t es-qs -c sigma_with_generic_logsources/tools/config/generic/sysmon.yml -c config/sigmac-config.yml generic-solutions/mimikatz_2.1.1_hashes.yml
 sigma_with_generic_logsources/tools/sigmac -t es-qs -c sigma_with_generic_logsources/tools/config/generic/sysmon.yml -c config/sigmac-config.yml generic-solutions/netpass_parameters.yml
