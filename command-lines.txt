@@ -1,6 +1,7 @@
 # Get familar with  Sigma Converter and convert Mimikatz without configuration
 
 sigma/tools/sigmac --help
+sigma/tools/sigmac -t es-qs -f tag=attack.s0002 -I -Orulecomment -r sigma/rules/windows
 sigma/tools/sigmac -t es-qs solutions/mimikatz_2.1.1_hashes.yml
 
 # Conversion of Mimikatz rule with configuration
@@ -9,7 +10,7 @@ sigma/tools/sigmac -t es-qs -c config/sigmac-config.yml solutions/mimikatz_2.1.1
 
 # Netpass rule conversion
 
-sigma/tools/sigmac -t es-qs -c config/sigmac-config.yml solutions/netpass_parameters.ym
+sigma/tools/sigmac -t es-qs -c config/sigmac-config.yml solutions/netpass_parameters.yml
 
 # WCE rule conversion
 
