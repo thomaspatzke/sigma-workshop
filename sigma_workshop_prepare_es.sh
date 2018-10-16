@@ -19,6 +19,14 @@ else
     echo "Failed!"
 fi
 
+echo -n "Deleting potentially existing Kibana index pattern..."
+if curl --fail -s -X DELETE -H "kbn-version: 6.4.1" -H "Content-Type: application/json" $KIBANA/api/saved_objects/index-pattern/d9085b70-cc00-11e8-979b-49973e02c133 > /dev/null
+then
+    echo "Ok"
+else
+    echo "Failed (most likely because it doesn't existed, which is ok)"
+fi
+
 echo -n "Importing Kibana index pattern..."
 if curl --fail -s -X POST -H "kbn-version: 6.4.1" -H "Content-Type: application/json" --data-binary @kibana-index_pattern.json $KIBANA/api/saved_objects/index-pattern/d9085b70-cc00-11e8-979b-49973e02c133 > /dev/null
 then
