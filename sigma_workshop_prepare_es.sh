@@ -28,7 +28,7 @@ else
 fi
 
 echo -n "Importing Kibana index pattern..."
-if curl --fail -s -X POST -H "kbn-version: 6.4.1" -H "Content-Type: application/json" --data-binary @kibana-index_pattern.json $KIBANA/api/saved_objects/index-pattern/d9085b70-cc00-11e8-979b-49973e02c133 > /dev/null
+if curl --fail -s -X POST -H "kbn-version: 6.6.0" -H "Content-Type: application/json" --data-binary @kibana-index_pattern.json $KIBANA/api/saved_objects/index-pattern/workshop > /dev/null
 then
     echo "Ok"
 else
