@@ -12,6 +12,14 @@ sigma/tools/sigmac -t es-qs -c config/sigmac-config.yml solutions/mimikatz_2.1.1
 
 sigma/tools/sigmac -t es-qs -c config/sigmac-config.yml solutions/netpass_parameters.yml
 
+# Conversion of Netpass rule to generic Sigma rule
+
+sigma_with_generic_logsources/tools/sigma2genericsigma solutions/netpass_parameters.yml
+
+# Conversion of generic Sigma rules
+
+sigma_with_generic_logsources/tools/sigmac -c sigma_with_generic_logsources/tools/config/generic/sysmon.yml -c sigma_with_generic_logsources/tools/config/elk-winlogbeat.yml netpass_parameters_generic.yml
+
 # WCE rule conversion
 
 sigma/tools/sigmac -t es-qs -c config/sigmac-config.yml solutions/wce_injection.yml
@@ -24,3 +32,7 @@ sigma/tools/sigmac -t kibana -c config/sigmac-config.yml solutions/* -o kibana.j
 
 sigma_with_generic_logsources/tools/sigmac -t es-qs -c sigma_with_generic_logsources/tools/config/generic/sysmon.yml -c config/sigmac-config.yml generic-solutions/mimikatz_2.1.1_hashes.yml
 sigma_with_generic_logsources/tools/sigmac -t es-qs -c sigma_with_generic_logsources/tools/config/generic/sysmon.yml -c config/sigmac-config.yml generic-solutions/netpass_parameters.yml
+
+# MISP import
+
+tools/sigma2misp @misp.conf --same-event rules/apt/apt_turla_*
