@@ -25,7 +25,7 @@ git clone --recursive https://github.com/thomaspatzke/sigma-workshop.git
 
 ### Elasticsearch/Kibana Docker Environment
 
-The workshop environment was tested successfully under Linux Mint 8.3 and should therefore also work fine with Ubuntu
+The workshop environment was tested successfully under Linux Mint 18.3 and should therefore also work fine with Ubuntu
 16.04. You should have installed Docker CE from the [Docker package
 sources](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce). Ensure to install the *docker-ce*
 package, avoid the old packages *docker*, *docker-engine* and *docker.io*.
