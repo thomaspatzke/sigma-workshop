@@ -10,12 +10,12 @@ logsource:
 detection:
     selection:
         CommandLine:
-            - "* /stext"
-            - "* /stab"
-            - "* /scomma"
-            - "* /stabular"
-            - "* /shtml"
-            - "* /sverhtml"
-            - "* /sxml"
+            - "* /stext *"
+            - "* /stab *"
+            - "* /scomma *"
+            - "* /stabular *"
+            - "* /shtml *"
+            - "* /sverhtml *"
+            - "* /sxml *"
     condition: selection
 level: high
