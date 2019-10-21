@@ -1,0 +1,15 @@
+title: Base-64 encoded ping
+status: stable
+description: Detect all possibilities of a base64 encoded ping command
+tags:
+    - attack.t1140
+    - attack.t1027
+    - attack.defense_evasion
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection:
+        CommandLine|wide|base64offset|contains: 'ping'
+    condition: selection
+level: high
