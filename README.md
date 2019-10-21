@@ -33,7 +33,7 @@ package, avoid the old packages *docker*, *docker-engine* and *docker.io*.
 First, the Elasticsearch/Kibana stack has to be started with Docker compose:
 
 ```
-docker-compose -f es_kibana.docker-compose.yml up
+docker-compose up
 ```
 
 This takes a while. Please wait until the environment is running. You can verify this by invocation of 
