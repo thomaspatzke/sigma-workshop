@@ -51,7 +51,7 @@ port as first parameter to the command line: `./sigma_workshop_prepare_es.sh elk
 
 ### Sigma dependencies
 
-Sigma requires Python 3.5 and PyYAML. Under Ubuntu, these can be installed with (as root):
+Sigma requires Python 3.6 and PyYAML. Under Ubuntu, these can be installed with (as root):
 
 ```
 apt-get install python3 python3-yaml
@@ -63,13 +63,36 @@ With an existing Python 3 installation the dependency can be installed with:
 pip3 install -r sigma/tools/requirements.txt
 ```
 
-If you don't want to mess with your system Python installation, you can also work from a virtual environment that can be
-set up and activated with:
+In addition PyMISP is required for the *sigma2misp* tool. This can be installed with
 
 ```
-sudo apt-get install python3 python3-pip virtualenv
-virtualenv -p python3 pyenv
-pyenv/bin/activate
+pip3 install pymisp
+```
+
+or
+
+```
+pip3 install -r sigma/tools/requirements-misp.txt
+```
+
+If you don't want to mess with your system Python installation, you can also work from a virtual environment. Sigma
+supports [Pipenv](https://pipenv.kennethreitz.org/en/latest/). Run the following command from the Sigma directory to
+setup and activate a virtual environment with all dependencies installed:
+
+```
+pipenv shell
+```
+
+### MISP
+
+For hands-on exercises of *sigma2misp* a MISP instance is required. I can recommend the [MISP
+dockerized](https://github.com/DCSO/MISP-dockerized) project from DCSO. Run the following commands and answer the asked
+questions to install one:
+
+```
+git clone https://github.com/DCSO/MISP-dockerized.git
+cd MISP-dockerized
+make install
 ```
 
 ## Usage
