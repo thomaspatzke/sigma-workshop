@@ -97,5 +97,5 @@ make install
 
 ## Usage
 
-The logs are contained in the time frame between 14:45 and 15:20 on 2018-09-19 and can be viewed in
-[Kibana](http://localhost:5601/app/kibana#/discover?_g=(refreshInterval:(pause:!t,value:0),time:(from:'2018-09-19T12:39:20.110Z',mode:absolute,to:'2018-09-19T13:24:08.109Z'))).
+The logs are contained in the time frame between 14:45 and 15:20 on 2019-09-19 and can be viewed in
+[Kibana](http://localhost:5601/app/kibana#/discover?_g=(refreshInterval:(pause:!t,value:0),time:(from:'2019-09-19T12:39:20.110Z',mode:absolute,to:'2019-09-19T13:24:08.109Z'))).
